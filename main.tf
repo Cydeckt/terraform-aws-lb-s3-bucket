@@ -26,7 +26,7 @@ data "aws_iam_policy_document" "default" {
 }
 
 module "s3_bucket" {
-  source                             = "cloudposse/s3-log-storage/aws"
+  source                             = "cydeckt/s3-log-storage/aws"
   version                            = "0.20.0"
   context                            = module.this.context
   acl                                = var.acl
