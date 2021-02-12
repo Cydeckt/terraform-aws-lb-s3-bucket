@@ -26,8 +26,7 @@ data "aws_iam_policy_document" "default" {
 }
 
 module "s3_bucket" {
-  source                             = "cydeckt/s3-log-storage/aws"
-  version                            = "0.20.0"
+  source                             = "../s3_bucket/lb-s3-bucket"
   context                            = module.this.context
   acl                                = var.acl
   policy                             = join("", data.aws_iam_policy_document.default.*.json)
